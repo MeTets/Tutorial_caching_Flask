@@ -116,7 +116,7 @@ if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)
 ```
 
-Agora vamos implementar na primeira rota, "/usuarios/<id>", o o HTTP-Cache-Control através do headers da resposta do servidor.
+Agora vamos implementar na primeira rota, "/usuarios/id", o o HTTP-Cache-Control através do headers da resposta do servidor.
 
 ```Python
 # A resposta dessa url da API vai ser guardada no cache do navegador por 300 segundos, 5 minutos
