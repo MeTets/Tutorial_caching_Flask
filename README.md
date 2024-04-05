@@ -52,6 +52,7 @@ sudo apt-get install python3-flask-restful
 ```
 
 Depois disso nós começamos a criar a nossa API, ela vai ser um sistema de consulta de cadastro de um banco fictício, a base de dados do sistema vai ser um dicionário em python e nós vamos implementar o metódo Read do CRUD para poder interagir com a base de dados.
+
 **OBS:** O dicionário pode ser substítuido por qualquer banco de dados, mas ele servirá para o nosso exemplo.
 
 ```Python
@@ -120,6 +121,7 @@ if __name__ == "__main__":
 ```
 
 Agora, com a API pronta, basta colocar ela no ar.
+
 **OBS:** Verificque se você está acessando a pasta aonde foi salvo o arquivo.py com a API
 
 ### Windows
