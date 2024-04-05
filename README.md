@@ -113,7 +113,7 @@ def getAllUsers():
   return response
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', debug=True)
+  app.run(debug=True)
 ```
 
 Agora vamos implementar na primeira rota, "/usuarios/id", o HTTP-Cache-Control através dos headers da resposta do servidor.
@@ -198,7 +198,7 @@ def getAllUsers():
   return response
 
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', debug=True)
+  app.run(debug=True)
 ```
 
 
