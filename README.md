@@ -29,8 +29,6 @@ O método utilizado no tutorial para implementar o caching na API Flask vai ser 
 
 MÃOS A OBRA!
 
-1. Passo - Constriur uma api em Python Flask
-
 Se você ainda não tem Python ou não sabe nada sobre Python, segue o link de um tutorial de como baixar o python e iniciar na linguagem. [Python Org Tutorial](https://www.python.org/about/gettingstarted/)
 
 Com o python já instalado na sua máquina vai ser necessário que você entre no cmd do seu computador e baixe a bibliteoca Flask ou a extensão flask-RESTful. 
@@ -53,8 +51,8 @@ sudo apt-get install python3-flask
 sudo apt-get install python3-flask-restful
 ```
 
-Depois disso nós começamos a criar a nossa API. A API no exemplo vai ser um sistema de consulta de cadastro de um banco fictício, a base de dados do sistema vai ser um dicionário em python e nós vamos implementar o metódo Read do CRUD para poder interagir com a base de dados.
-**OBS:** O dicionário poderia ser substítuido por qualquer banco de dados, mas ele servirá para o nosso exemplo.
+Depois disso nós começamos a criar a nossa API, ela vai ser um sistema de consulta de cadastro de um banco fictício, a base de dados do sistema vai ser um dicionário em python e nós vamos implementar o metódo Read do CRUD para poder interagir com a base de dados.
+**OBS:** O dicionário pode ser substítuido por qualquer banco de dados, mas ele servirá para o nosso exemplo.
 
 ```Python
 from flask import Flask, make_response
@@ -120,3 +118,19 @@ def getAllUsers():
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)
 ```
+
+Agora, com a API pronta, basta colocar ela no ar.
+
+### Windows
+
+```
+python <nome_do_arquivo>.py
+```
+
+### Linux (Ubuntu)
+
+```
+python3 <nome_do_arquivo>.py
+```
+
+Então com tudo pronto e a API no ar, vamos verificar se o caching da resposta da requisição está funcionando
