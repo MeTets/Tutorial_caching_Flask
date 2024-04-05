@@ -122,7 +122,7 @@ if __name__ == "__main__":
 
 Agora, com a API pronta, basta colocar ela no ar.
 
-**OBS:** Verificque se você está acessando a pasta aonde foi salvo o arquivo.py com a API
+**OBS:** Verifique se você está acessando a pasta aonde foi salvo o arquivo.py com a API
 
 ### Windows
 
