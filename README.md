@@ -120,8 +120,11 @@ if __name__ == "__main__":
 ```
 
 Agora, com a API pronta, basta colocar ela no ar.
+**OBS:** Verificque se você está acessando a pasta aonde foi salvo o arquivo.py com a API
 
 ### Windows
+
+CMD
 
 ```
 python <nome_do_arquivo>.py
@@ -129,8 +132,17 @@ python <nome_do_arquivo>.py
 
 ### Linux (Ubuntu)
 
+SHELL
+
 ```
 python3 <nome_do_arquivo>.py
 ```
 
-Então com tudo pronto e a API no ar, vamos verificar se o caching da resposta da requisição está funcionando
+Então com tudo pronto e a API no ar, vamos verificar se o caching da resposta da requisição está funcionando.
+
+Como é possível observar nas imagens, a primeira requisição demorou 5 segundos para ser processada, pois a requisição acessou a API, processou os dados e respondeu as informações para o navegador.
+Já a segunda requisição demorou alugns milisegundos, já que a resposta da API já estava salva no cache do navegador, além disso é possivel observar que o navegador não recebeu nenhuma quantidade de dados e sim que a infomração veio do cache.
+
+![Requisição Número 1](https://github.com/MeTets/Tutorial_caching_Flask/assets/90905651/9dcb7995-0341-49dc-8b07-8cc89686bca7)
+
+
