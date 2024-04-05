@@ -21,11 +21,11 @@ Além dos diferentes tipos, existem também diferentes estratégias de implement
 ### Implementando caching em uma API REST Flask - Client-Side Caching
 O método utilizado no tutorial para implementar o caching na API Flask vai ser o HTTP-Cache Control. Esse método é um dos mais simples e rápidos de serem implementados e ele se encaixa no tipo Cliet-side Caching e na estreatégia Read. Nesse caso o browser vai ficar responsável por armazenar as informações no seu prórpio cache de acordo com as regras passadas através dos headers das requisições e das respostas. As regras que podem ser passadas através dos header "Cache-Control" da requisição são:
 
-1. max-age -> Define o tempo máximo que a informação pode ficar armazeanda no cache no navegador antes de expirar.
-2. public/private -> Define quais servidores podem armazenar as infomrações da requisição em cache. **Public**: Todos os intermediários + usuário final \ **Private**: Usuário final
-3. must-revalidate -> Define que após o fim da validade, as infomrações em cache devem ser revalidadas antes de serem enviadas para o usuário final
-4. no-cache -> Define que as informações do cache devem ser atualizadas a cada reutilização da informação.
-5. no-store -> Define que a informações da requisições não devem ser armazenadas no cache do navegador.
+1. **max-age** -> Define o tempo máximo que a informação pode ficar armazeanda no cache no navegador antes de expirar.
+2. **public/private** -> Define quais servidores podem armazenar as infomrações da requisição em cache. **Public**: Todos os intermediários + usuário final \ **Private**: Usuário final
+3. **must-revalidate** -> Define que após o fim da validade, as infomrações em cache devem ser revalidadas antes de serem enviadas para o usuário final
+4. **no-cache** -> Define que as informações do cache devem ser atualizadas a cada reutilização da informação.
+5. **no-store** -> Define que a informações da requisições não devem ser armazenadas no cache do navegador.
 
 ### Implementando caching em uma API REST Flask - Server-Side Caching
 
