@@ -152,6 +152,7 @@ Já a segunda requisição demorou alugns milisegundos, já que a resposta da AP
 ![Exemplo_req_resp_com_cache](https://github.com/MeTets/Tutorial_caching_Flask/assets/90905651/c55acfcf-192b-4f41-a80b-046a890f118a)
 
 Já no lado do servidor é possível obervar que a API só processou uma requisição e não duas.
+
 **OBS:** A primeira requisição que deu erro 404 foi processada na rota errada, a requisição que estamos olhando é a GET /usuarios/1
 
 ![Requsicoes_no_servidor](https://github.com/MeTets/Tutorial_caching_Flask/assets/90905651/28d4c090-94ce-49d6-9d87-bd17e263154f)
