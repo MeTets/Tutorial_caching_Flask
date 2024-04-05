@@ -63,31 +63,31 @@ base_dados = {
   1:{
     "name": "José",
     "idade": 53,
-    "estado": RJ,
+    "estado": "RJ",
     "saldo": 1200.00
   },
   2:{
     "name": "Maria",
     "idade": 25,
-    "estado": SP,
+    "estado": "SP",
     "saldo": 15.50
   },
   3:{
     "name": "Alfredo",
     "idade": 80,
-    "estado": SP,
+    "estado": "SP",
     "saldo": 80000.00
   },
   4:{
     "name": "Zeri",
     "idade": 18,
-    "estado": MG,
+    "estado": "MG",
     "saldo": 275.36
   },
   5:{
     "name": "Marcelo",
     "idade": 34,
-    "estado": RS,
+    "estado": "RS",
     "saldo": 15760.89
   },
 }
