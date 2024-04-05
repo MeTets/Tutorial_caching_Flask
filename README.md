@@ -133,6 +133,75 @@ def searchUser(id):
   return "Esse id não existe na base de dados"
 ```
 
+O código completo fica assim
+
+
+```Python
+from flask import Flask, make_response
+import time
+import json
+
+base_dados = {
+  1:{
+    "name": "José",
+    "idade": 53,
+    "estado": "RJ",
+    "saldo": 1200.00
+  },
+  2:{
+    "name": "Maria",
+    "idade": 25,
+    "estado": "SP",
+    "saldo": 15.50
+  },
+  3:{
+    "name": "Alfredo",
+    "idade": 80,
+    "estado": "SP",
+    "saldo": 80000.00
+  },
+  4:{
+    "name": "Zeri",
+    "idade": 18,
+    "estado": "MG",
+    "saldo": 275.36
+  },
+  5:{
+    "name": "Marcelo",
+    "idade": 34,
+    "estado": "RS",
+    "saldo": 15760.89
+  },
+}
+
+app = Flask(__name__)
+
+# A resposta dessa url da API vai ser guardada no cache do navegador por 300 segundos, 5 minutos
+@app.route('/usuarios/<id>')
+def searchUser(id):
+  if base_dados.get(int(id)):
+    response = make_response(json.dumps(base_dados[int(id)], indent=3))
+    response.headers['Content-Type'] = 'application/json; charset=utf-8'
+    # Implementando o HTTP-Cache-Control
+    response.headers['Cache-Control'] = 'private, max-age=300, must-revalidate' # Guarda a informação no cache por 5 minutos e revalida antes de enviá-la novamente caso o tempo de validade tenha expirado
+    time.sleep(5) # O time sleep serve para demonstrar de uma maneira mais tangível a diferença no tempo de resposta da API e do Cache do navegador
+    return response
+  time.sleep(5)
+  return "Esse id não existe na base de dados"
+
+# A resposta dessa url da API não vai ser gaurdada no cache do navegador
+@app.route('/usuarios')
+def getAllUsers():
+  response = make_response(json.dumps(base_dados[id], indent=3))
+  response.headers['Content-Type'] = 'application/json; charset=utf-8'
+  time.sleep(5)
+  return response
+
+if __name__ == "__main__":
+  app.run(host='0.0.0.0', debug=True)
+```
+
+
 Agora, com a API pronta, basta colocar ela no ar.
 
 **OBS:** Verifique se você está acessando a pasta aonde foi salvo o arquivo.py com a API
