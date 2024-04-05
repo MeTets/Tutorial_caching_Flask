@@ -94,14 +94,14 @@ base_dados = {
 
 app = Flask(__name__)
 
-# A resposta dessa url da API vai ser guardada no cache do navegador
+# A resposta dessa url da API vai ser guardada no cache do navegador por 300 segundos, 5 minutos
 @app.route('/usuarios/<id>')
 def searchUser(id):
-  if base_dados.get(id):
-    response = make_response(json.dumps(base_dados[id], indent=3))
+  if base_dados.get(int(id)):
+    response = make_response(json.dumps(base_dados[int(id)], indent=3))
     response.headers['Content-Type'] = 'application/json; charset=utf-8'
     # Implementando o HTTP-Cache-Control
-    response.headers['Cache-Control'] = 'private, max-age=300, must-revalidate'
+    response.headers['Cache-Control'] = 'private, max-age=300, must-revalidate' # Guarda a informação no cache por 5 minutos e revalida antes de enviá-la novamente caso o tempo de validade tenha expirado
     time.sleep(5)
     return response
   time.sleep(5)
@@ -140,9 +140,31 @@ python3 <nome_do_arquivo>.py
 
 Então com tudo pronto e a API no ar, vamos verificar se o caching da resposta da requisição está funcionando.
 
-Como é possível observar nas imagens, a primeira requisição demorou 5 segundos para ser processada, pois a requisição acessou a API, processou os dados e respondeu as informações para o navegador.
-Já a segunda requisição demorou alugns milisegundos, já que a resposta da API já estava salva no cache do navegador, além disso é possivel observar que o navegador não recebeu nenhuma quantidade de dados e sim que a infomração veio do cache.
+Como é possível observar nas imagens, a primeira requisição demorou 5 segundos para ser processada, pois a requisição acessou a API, processou os dados e deu a resposta para o navegador.
+Já a segunda requisição demorou alugns milisegundos, já que a resposta da API já estava salva no cache do navegador, além disso, é possivel observar que o navegador não recebeu nenhuma transferência de dados e sim que a informação veio do cache.
+
+### Requisição Número 1
 
 ![Requisição Número 1](https://github.com/MeTets/Tutorial_caching_Flask/assets/90905651/9dcb7995-0341-49dc-8b07-8cc89686bca7)
 
+### Requisição Número 2
+
+![Exemplo_req_resp_com_cache](https://github.com/MeTets/Tutorial_caching_Flask/assets/90905651/c55acfcf-192b-4f41-a80b-046a890f118a)
+
+Já no lado do servidor é possível obervar que a API só processou uma requisição e não duas.
+**OBS:** A primeira requisição que deu erro 404 foi processada na rota errada, a requisição que estamos olhando é a GET /usuarios/1
+
+![Requsicoes_no_servidor](https://github.com/MeTets/Tutorial_caching_Flask/assets/90905651/28d4c090-94ce-49d6-9d87-bd17e263154f)
+
+**PRONTO!** Agora você sabe implementar o armazenamento em cache de uma aplicação REST usando o HTTP-Cache-Control.
+
+Essa pequena adição no seu código vai melhorar a performance e a latência da sua API, entretanto é importante resaltar que existem alguns positivos e negativos no uso do cache.
+
+### Positivos 
+1. Diminui o consumo da API e do processamento de dados.
+2. Diminui o tempo de respota para o cliente.
+4. Permite que as inforamções sejam enviadas para o cliente mesmo sem conexão com internet ou caso a API fique fora do ar.
+
+### Negativos
+1. Os dados retornados para o cliente podem ser inconsistentes (no nosso exemplo, caso a base de dados fosse atualizada enquanto o cache daquela requisição ainda não expirou, a informação retornada para o cliente estará ultrapassda).
 
