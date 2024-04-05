@@ -107,7 +107,7 @@ def searchUser(id):
 
 @app.route('/usuarios')
 def getAllUsers():
-  response = make_response(json.dumps(base_dados[id], indent=3))
+  response = make_response(json.dumps(base_dados, indent=3))
   response.headers['Content-Type'] = 'application/json; charset=utf-8'
   time.sleep(5)
   return response
@@ -192,7 +192,7 @@ def searchUser(id):
 # A resposta dessa url da API não vai ser gaurdada no cache do navegador
 @app.route('/usuarios')
 def getAllUsers():
-  response = make_response(json.dumps(base_dados[id], indent=3))
+  response = make_response(json.dumps(base_dados, indent=3))
   response.headers['Content-Type'] = 'application/json; charset=utf-8'
   time.sleep(5)
   return response
