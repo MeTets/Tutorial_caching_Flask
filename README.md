@@ -32,6 +32,7 @@ MÃOS A OBRA!
 1. Passo - Constriur uma api em Python Flask
 
 Se você ainda não tem Python, segue o link de um tutorial de como baixar o python e iniciar na linguagem. [Python Org Tutorial](https://www.python.org/about/gettingstarted/)
+
 Com o python já instalado na sua máquina vai ser necessário que você baixe o python
 ```
 pip install Flask
