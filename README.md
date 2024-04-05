@@ -241,6 +241,14 @@ Já no lado do servidor é possível obervar que a API só processou uma requisi
 
 ![Requsicoes_no_servidor](https://github.com/MeTets/Tutorial_caching_Flask/assets/90905651/28d4c090-94ce-49d6-9d87-bd17e263154f)
 
+Agora as requisiçoes que não tem cache.
+
+![Req_1_sem_chace](https://github.com/MeTets/Tutorial_caching_Flask/assets/90905651/c9b7c47e-68e4-4680-a9e9-1bf6cb529da3)
+
+![Req_2_sem_chace](https://github.com/MeTets/Tutorial_caching_Flask/assets/90905651/f427b2ef-e6b6-4786-9fa9-6c71d2e46a33)
+
+![Servidor_sem_cache](https://github.com/MeTets/Tutorial_caching_Flask/assets/90905651/50c850a9-47e0-4df7-ba81-4f63fb717d7e)
+
 **PRONTO!** Agora você sabe implementar o armazenamento em cache de uma aplicação REST usando o HTTP-Cache-Control.
 
 Essa pequena adição no seu código vai melhorar a performance e a latência da sua API. Entretanto, alem dos pontos positivos também existem pontos negativos, então vamos fazer um resumo desses pontos sobre caching com Http-Cache-Control.
