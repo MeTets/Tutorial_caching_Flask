@@ -102,7 +102,7 @@ def searchUser(id):
     response.headers['Content-Type'] = 'application/json; charset=utf-8'
     # Implementando o HTTP-Cache-Control
     response.headers['Cache-Control'] = 'private, max-age=300, must-revalidate' # Guarda a informação no cache por 5 minutos e revalida antes de enviá-la novamente caso o tempo de validade tenha expirado
-    time.sleep(5)
+    time.sleep(5) # O time sleep serve para demonstrar de uma maneira mais tangível a diferença no tempo de resposta da API e do Cache do navegador
     return response
   time.sleep(5)
   return "Esse id não existe na base de dados"
