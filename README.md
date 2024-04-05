@@ -159,7 +159,7 @@ Já no lado do servidor é possível obervar que a API só processou uma requisi
 
 **PRONTO!** Agora você sabe implementar o armazenamento em cache de uma aplicação REST usando o HTTP-Cache-Control.
 
-Essa pequena adição no seu código vai melhorar a performance e a latência da sua API, entretanto é importante resaltar que existem alguns positivos e negativos no uso do cache.
+Essa pequena adição no seu código vai melhorar a performance e a latência da sua API. Entretanto, alem dos pontos positivos também existem pontos negativos, então vamos fazer um resumo desses pontos sobre caching com Http-Cache-Control.
 
 ### Positivos 
 1. Diminui o consumo da API e do processamento de dados.
