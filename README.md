@@ -95,6 +95,30 @@ base_dados = {
 
 app = Flask(__name__)
 
+@app.route('/usuarios/<id>')
+def searchUser(id):
+  if base_dados.get(int(id)):
+    response = make_response(json.dumps(base_dados[int(id)], indent=3))
+    response.headers['Content-Type'] = 'application/json; charset=utf-8'
+    time.sleep(5)
+    return response
+  time.sleep(5)
+  return "Esse id não existe na base de dados"
+
+@app.route('/usuarios')
+def getAllUsers():
+  response = make_response(json.dumps(base_dados[id], indent=3))
+  response.headers['Content-Type'] = 'application/json; charset=utf-8'
+  time.sleep(5)
+  return response
+
+if __name__ == "__main__":
+  app.run(host='0.0.0.0', debug=True)
+```
+
+Agora vamos implementar na primeira rota, "/usuarios/<id>", o o HTTP-Cache-Control através do headers da resposta do servidor.
+
+```Python
 # A resposta dessa url da API vai ser guardada no cache do navegador por 300 segundos, 5 minutos
 @app.route('/usuarios/<id>')
 def searchUser(id):
@@ -107,17 +131,6 @@ def searchUser(id):
     return response
   time.sleep(5)
   return "Esse id não existe na base de dados"
-
-# A resposta dessa url da API não vai ser guardada no cache do navegador
-@app.route('/usuarios')
-def getAllUsers():
-  response = make_response(json.dumps(base_dados[id], indent=3))
-  response.headers['Content-Type'] = 'application/json; charset=utf-8'
-  time.sleep(5)
-  return response
-
-if __name__ == "__main__":
-  app.run(host='0.0.0.0', debug=True)
 ```
 
 Agora, com a API pronta, basta colocar ela no ar.
