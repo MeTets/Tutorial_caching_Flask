@@ -97,8 +97,8 @@ app = Flask(__name__)
 # A resposta dessa url da API vai ser guardada no cache do navegador
 @app.route('/usuarios/<id>')
 def searchUser(id):
-  if banco_dados.get(id):
-    response = make_response(json.dumps(bando_dados[id], indent=3))
+  if base_dados.get(id):
+    response = make_response(json.dumps(base_dados[id], indent=3))
     response.headers['Content-Type'] = 'application/json; charset=utf-8'
     # Implementando o HTTP-Cache-Control
     response.headers['Cache-Control'] = 'private, max-age=300, must-revalidate'
@@ -110,7 +110,7 @@ def searchUser(id):
 # A resposta dessa url da API não vai ser guardada no cache do navegador
 @app.route('/usuarios')
 def getAllUsers():
-  response = make_response(json.dumps(bando_dados[id], indent=3))
+  response = make_response(json.dumps(base_dados[id], indent=3))
   response.headers['Content-Type'] = 'application/json; charset=utf-8'
   time.sleep(5)
   return response
