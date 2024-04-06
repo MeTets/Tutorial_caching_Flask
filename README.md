@@ -261,3 +261,16 @@ Essa pequena adição no seu código vai melhorar a performance e a latência da
 ### Negativos
 1. Os dados retornados para o cliente podem ser inconsistentes (no nosso exemplo, caso a base de dados fosse atualizada enquanto o cache daquela requisição ainda não expirou, a informação retornada para o cliente estará ultrapassda).
 
+## FONTES
+
+[Tutorial Cache Rest 1](https://codedamn.com/news/backend/rest-api-caching-advanced-techniques)
+
+[Tutorial Cache Rest 2](https://rapidapi.com/guides/api-caching-with-http-headers)
+
+[Tutorial Cache Rest 3](https://www.freecodecamp.org/news/an-in-depth-introduction-to-http-caching-cache-control-vary/)
+
+[Flask documentation](https://flask.palletsprojects.com/en/3.0.x/api/)
+
+[Mozzila Org Documentation](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Headers/Cache-Control)
+
+[Tutorial Cache Rest em Flask](https://www.maskaravivek.com/post/how-to-add-http-cachecontrol-headers-in-flask/)
